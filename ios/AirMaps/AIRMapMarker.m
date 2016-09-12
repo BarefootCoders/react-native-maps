@@ -15,7 +15,7 @@
 #import "RCTUtils.h"
 #import "RCTImageLoader.h"
 
-@implementation AIREmptyCalloutBackgroundView
+@implementation EmptyCalloutBackgroundView
 @end
 
 @implementation AIRMapMarker {
@@ -53,7 +53,7 @@
     if ([subview isKindOfClass:[AIRMapCallout class]]) {
         self.calloutView = (AIRMapCallout *)subview;
     } else {
-        [super insertReactSubview:(UIView *)subview atIndex:atIndex];
+        [super insertReactSubview:subview atIndex:atIndex];
     }
 }
 
@@ -61,7 +61,7 @@
     if ([subview isKindOfClass:[AIRMapCallout class]] && self.calloutView == subview) {
         self.calloutView = nil;
     } else {
-        [super removeReactSubview:(UIView *)subview];
+        [super removeReactSubview:subview];
     }
 }
 
@@ -110,7 +110,7 @@
         if (self.calloutView.tooltip) {
             // if tooltip is true, then the user wants their react view to be the "tooltip" as wwell, so we set
             // the background view to something empty/transparent
-            calloutView.backgroundView = [AIREmptyCalloutBackgroundView new];
+            calloutView.backgroundView = [EmptyCalloutBackgroundView new];
         } else {
             // the default tooltip look is wanted, and the user is just filling the content with their react subviews.
             // as a result, we use the default "masked" background view.
@@ -214,7 +214,7 @@
                                                                             size:self.bounds.size
                                                                            scale:RCTScreenScale()
                                                                          clipped:YES
-                                                                      resizeMode:RCTResizeModeCenter
+                                                                      resizeMode:UIViewContentModeCenter
                                                                    progressBlock:nil
                                                                  completionBlock:^(NSError *error, UIImage *image) {
                                                                      if (error) {
