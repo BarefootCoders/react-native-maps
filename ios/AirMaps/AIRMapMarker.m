@@ -163,6 +163,8 @@
                                          inView:annotationView
                               constrainedToView:self.map
                                        animated:YES];
+
+    self.map.calloutView.coordinate = self.coordinate;
 }
 
 - (void)hideCalloutView
@@ -229,7 +231,7 @@
 - (void)setPinColor:(UIColor *)pinColor
 {
     _pinColor = pinColor;
-    
+
     if ([_pinView respondsToSelector:@selector(setPinTintColor:)]) {
         _pinView.pinTintColor = _pinColor;
     }
