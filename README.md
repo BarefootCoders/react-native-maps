@@ -1,4 +1,4 @@
-# react-native-maps [![npm version](https://img.shields.io/npm/v/react-native-maps.svg?style=flat)](https://www.npmjs.com/package/react-native-maps)
+# react-native-maps
 
 React Native Map components for iOS + Android
 
@@ -386,7 +386,11 @@ Pass an array of coordinates to focus a map region on said coordinates.
 ```javascript
 const styles = StyleSheet.create({
   map: {
-    ...StyleSheet.absoluteFillObject,
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
   },
 });
 ```
